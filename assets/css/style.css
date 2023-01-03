@@ -136,39 +136,57 @@ a:hover {
 }
 
 .overlay-mf.brushizer-color {
-  background-color: #b0a19c;
+  background: url(../img/cover-details-brushizer.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.lottery-color {
-  background-color: #e57714;
+  background: url(../img/cover-details-lottery.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.food-app-color {
-  background-color: #3f3f3f;
+  background: url(../img/cover-details-food-app.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.e-learning-color {
-  background-color: #457B9D;
+  background: url(../img/cover-details-e-learning.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.skills-calculator-color {
-  background-color: #fac117;
+  background: url(../img/cover-details-skills-calculator.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.ngrx-color {
-  background-color: #b42acb;
+  background: url(../img/cover-details-ngrx.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.pantheon-color {
-  background-color: #116466;
+  background: url(../img/cover-details-pantheon.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.infinity-color {
-  background-color: #c7af8d;
+  background: url(../img/cover-details-infinity.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay-mf.wiins-color {
-  background-color: #2391d3;
+  background: url(../img/cover-details-wiins.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .main-color {
@@ -881,6 +899,7 @@ a:hover {
   color: #fff;
   font-weight: 600;
   font-size: 3rem;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 @media (min-width: 768px) {
@@ -934,10 +953,12 @@ a:hover {
 
 .hero-single .breadcrumb .breadcrumb-item.active {
   color: #cde1f8;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .hero-single .breadcrumb a {
   color: #fff;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 /*--------------------------------------------------------------
