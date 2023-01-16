@@ -189,6 +189,12 @@ a:hover {
   background-position: center;
 }
 
+.overlay-mf.angames-color {
+  background: url(../img/cover-details-angames.svg);
+  background-size: cover;
+  background-position: center;
+}
+
 .main-color {
   background-color: #201459;
 }
@@ -227,6 +233,10 @@ a:hover {
 
 .wiins-color {
   background-color: #2391d3;
+}
+
+.angames-color {
+  background-color: #8acfc1
 }
 
 .overlay-mf {
