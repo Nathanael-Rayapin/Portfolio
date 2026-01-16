@@ -90,6 +90,12 @@ const technologies = [
   "Figma",
   "Framer",
 
+  // Collaborative tool
+  "Trello",
+  "Jira",
+  "Notion",
+  "Confluence",
+
   // Others
   "GraphQL",
   "TypeScript",
