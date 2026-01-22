@@ -1,0 +1,121 @@
+{
+    "navbar": {
+        "home": "Accueil",
+        "about": "À propos",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "hero": {
+        "badge": "Bonjour, je suis",
+        "title": "Développeur Fullstack",
+        "subtitle": "Spécialisé en “pourquoi on fait ça comme ça ?”",
+        "description": "Je conçois et développe des applications web modernes, avec une attention particulière portée à la qualité du code, aux choix techniques et à l'architecture (Le portfolio ne compte pas 🤭)",
+        "cta1": "Voir mes projets",
+        "cta2": "Me contacter"
+    },
+    "about": {
+        "section": "À propos",
+        "title": "Qui suis-je ?",
+        "description1": "Développeur passionné avec 4 ans d'expérience, j'ai débuté mon parcours en ESN, au fil de missions et de contextes très variés. Cette diversité m'a permis de toucher à de nombreux domaines : front-end, back-end, DevOps, web, mobile, ainsi que des solutions low-code et no-code.",
+        "description2": "J'aborde chaque projet avec une approche pragmatique et curieuse, en cherchant avant tout à comprendre le besoin et à faire des choix techniques cohérents. J'utilise également l'IA comme outil d'aide au développement lorsque cela a du sens, tout en veillant à rester pleinement acteur de mes réalisations plutôt que simple spectateur.",
+        "description3": "En dehors du développement, je cultive mes autres passions, entre culture numérique et gastronomie.",
+        "localisation": {
+            "label": "Localisation",
+            "value": "Le Mans, France"
+        },
+        "availability": {
+            "label": "Disponibilité",
+            "value": "Ouvert aux opportunités"
+        },
+        "experience": {
+            "label": "Expérience",
+            "alternatelabel": "Années d'expérience",
+            "value": "4 ans"
+        },
+        "completedprojects": "Projets réalisés",
+        "passion": "Passion",
+        "experiences": [
+            {
+                "role": "Développeur Fullstack",
+                "description": "Intégration d'un système d'authentification Keycloak en marque blanche : parcours d'inscription, connexion et gestion du mot de passe, avec développement d'authenticators personnalisés."
+            },
+            {
+                "role": "Développeur Fullstack",
+                "description": "Développement d'une interface web intégrée aux caisses enregistreuses permettant la consultation et la mise à jour des informations client ainsi que la création de cartes de fidélité, avec rendu via WebView et ajout d'un clavier virtuel."
+            },
+            {
+                "role": "Développeur Fullstack",
+                "description": "Mise en place d'une nouvelle offre d'abonnement avec gestion des accès utilisateurs par rôles via Keycloak, intégrée aux offres existantes et livrée dans un délai contraint."
+            },
+            {
+                "role": "Développeur Mobile",
+                "description": "Développement d'une application mobile destinée aux journalistes pour l'upload de vidéos, incluant compression et envoi vers des plateformes externes."
+            },
+            {
+                "role": "Développeur Fullstack",
+                "description": "Conception d'un parcours locataire pour le dépôt de candidatures (création de compte, complétion de dossier) et évolution du back-office avec filtres et traitement des données transmises."
+            }
+        ]
+    },
+    "skills": {
+        "title": "Stack Technique"
+    },
+    "project": {
+        "section": "Projets",
+        "title": "Travaux récents",
+        "description": "Une sélection de mes projets les plus récents, démontrant mon expertise en développement web moderne.",
+        "projects": [
+            {
+                "description": "Plateforme digitale pour découvrir et réserver des activités, avec paiement sécurisé et gestion des utilisateurs."
+            },
+            {
+                "description": "Alertes instantanées lorsque des services externes (Stripe, AWS, Vercel...) tombent en panne, que votre certificat SSL expire ou que votre API ralentit."
+            },
+            {
+                "description": "Projet pédagogique dont l'objectif est de tester et documenter chaque fonctionnalité de Vitest à travers des cas d'usage simples et concrets."
+            }
+        ]
+    },
+    "contact": {
+        "section": "Contact",
+        "title": "Travaillons ensemble",
+        "description": "Une idée de projet ? Une question ? N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs délais.",
+        "form": {
+            "name": {
+                "label": "Nom",
+                "placeholder": "Votre nom"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "votre@email.com"
+            },
+            "subject": {
+                "label": "Sujet",
+                "placeholder": "Sujet de votre message"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Décrivez votre projet ou votre demande..."
+            },
+            "cta": {
+                "label": "Envoyer le message",
+                "labelpending": "Envoi en cours..."
+            }
+        },
+        "phone": {
+            "label": "Téléphone"
+        },
+        "location": {
+            "label": "Localisation"
+        },
+        "findme": "Retrouvez-moi sur",
+        "opentoopportunities": {
+            "title": "Ouvert aux opportunités",
+            "description": "Actuellement ouvert à de nouveaux projets"
+        }
+    },
+    "footer": {
+        "madewith": "Fait avec"
+    }
+}

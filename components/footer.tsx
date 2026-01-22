@@ -3,20 +3,26 @@
 import { ArrowUp, Heart } from "lucide-react"
 import { siGithub } from 'simple-icons'
 import BrandIcon from "./brand-icon"
+import { INavigationProps } from "./navigation";
 
-const footerLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "À propos", href: "#a-propos" },
-  { label: "Compétences", href: "#competences" },
-  { label: "Projets", href: "#projets" },
-  { label: "Contact", href: "#contact" },
-]
+interface IFooterProps extends Omit<INavigationProps, "lang" | "dict"> {
+  navbar: INavigationProps['dict'];
+  madewith: string;
+}
 
 const socials = [
   { icon: siGithub, href: "https://github.com/Nathanael-Rayapin", label: "GitHub" },
 ]
 
-export default function Footer() {
+export default function Footer({ navbar, madewith }: IFooterProps) {
+  const footerLinks = [
+    { label: navbar.home, href: "#accueil" },
+    { label: navbar.about, href: "#a-propos" },
+    { label: navbar.skills, href: "#competences" },
+    { label: navbar.projects, href: "#projets" },
+    { label: navbar.contact, href: "#contact" },
+  ]
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
@@ -33,7 +39,7 @@ export default function Footer() {
               <span className="text-primary">{"/>"}</span>
             </a>
             <p className="flex items-center gap-1 text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Nathanaël Rayapin. Fait avec
+              © {new Date().getFullYear()} Nathanaël Rayapin. {madewith}
               <Heart className="h-4 w-4 fill-accent text-accent" />
             </p>
           </div>
@@ -58,6 +64,7 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
                   aria-label={social.label}
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:text-primary"
                 >

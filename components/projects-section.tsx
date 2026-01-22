@@ -6,31 +6,63 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import BrandIcon from "./brand-icon"
 
-const projects = [
-  {
-    id: 1,
-    title: "Wewiins",
-    description: "Plateforme digitale pour découvrir et réserver des activités, avec paiement sécurisé et gestion des utilisateurs.",
-    image: "/wewiins-logo.png",
-    tags: ["Angular", "Stripe", "Kotlin", "Spring Boot", "Supabase", "FlutterFlow", "Docker", "PostgresSQL", "Figma"],
-    githubUrl: "https://github.com/Nathanael-Rayapin/Wewiins",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "DevAlert",
-    description: "Alertes instantanées lorsque des services externes (Stripe, AWS, Vercel...) tombent en panne, que votre certificat SSL expire ou que votre API ralentit.",
-    image: "/dev-alert.png",
-    tags: ["Next.js"],
-    githubUrl: "https://github.com/Nathanael-Rayapin/DevAlert",
-    featured: true,
-  }
-]
+interface IProjectProps {
+  dict: {
+    section: string;
+    title: string;
+    description: string;
+    projects: I18nProjectsProps[]
+  };
+}
 
-export default function ProjectsSection() {
+interface I18nProjectsProps {
+  description: string;
+}
+
+interface IProjectsProps {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  githubUrl: string;
+  featured: boolean;
+}
+
+export default function ProjectsSection({ dict }: IProjectProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
+
+  const projects: IProjectsProps[] = [
+    {
+      id: 1,
+      title: "Wewiins",
+      description: dict.projects[0].description,
+      image: "/wewiins-logo.png",
+      tags: ["Angular", "Stripe", "Kotlin", "Spring Boot", "Supabase", "FlutterFlow", "Docker", "PostgresSQL", "Figma"],
+      githubUrl: "https://github.com/Nathanael-Rayapin/Wewiins",
+      featured: true,
+    },
+    {
+      id: 2,
+      title: "DevAlert",
+      description: dict.projects[1].description,
+      image: "/dev-alert.png",
+      tags: ["Next.js"],
+      githubUrl: "https://github.com/Nathanael-Rayapin/DevAlert",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "ExpectToBeTrue",
+      description: dict.projects[2].description,
+      image: "/expect-to-be-true.png",
+      tags: ["Vitest"],
+      githubUrl: "https://github.com/Nathanael-Rayapin/Vitest-Playground",
+      featured: true,
+    }
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,13 +95,13 @@ export default function ProjectsSection() {
           )}
         >
           <div>
-            <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-primary">Projets</span>
+            <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-primary">{dict.section}</span>
             <h2 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="text-balance">Travaux récents</span>
+              <span className="text-balance">{dict.title}</span>
             </h2>
           </div>
           <p className="max-w-md text-muted-foreground">
-            Une sélection de mes projets les plus récents, démontrant mon expertise en développement web moderne.
+            {dict.description}
           </p>
         </div>
 

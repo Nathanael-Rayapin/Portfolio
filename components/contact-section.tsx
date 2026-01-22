@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useEffect, useRef, useState } from "react"
 import { Mail, MapPin, Send, Phone } from "lucide-react"
 import { siGithub } from 'simple-icons'
@@ -11,26 +10,62 @@ import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import BrandIcon from "./brand-icon"
 
-const contactInfo = [
-  { icon: Mail, label: "Email", value: "nathanael.rayapin@gmail.com", href: "mailto:nathanael.rayapin@gmail.com" },
-  { icon: Phone, label: "Téléphone", value: "+33 6 41 51 27 17", href: "tel:+33641512717" },
-  { icon: MapPin, label: "Localisation", value: "Le Mans, France" },
-]
+interface IContactProps {
+  dict: {
+    section: string;
+    title: string;
+    description: string;
+    phone: {
+      label: string;
+    };
+    location: {
+      label: string;
+    };
+    findme: string;
+    opentoopportunities: {
+      title: string;
+      description: string;
+    };
+    form: {
+      name: {
+        label: string;
+        placeholder: string;
+      };
+      email: {
+        label: string;
+        placeholder: string;
+      };
+      subject: {
+        label: string;
+        placeholder: string;
+      };
+      message: {
+        label: string;
+        placeholder: string;
+      };
+      cta: {
+        label: string;
+        labelpending: string;
+      };
+    },
+  };
+}
 
 const socials = [
   { icon: siGithub, href: "https://github.com/Nathanael-Rayapin", label: "GitHub" },
 ]
 
-export default function ContactSection() {
+export default function ContactSection({ dict }: IContactProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" })
   const sectionRef = useRef<HTMLDivElement>(null)
+
+  const contactInfo = [
+    { icon: Mail, label: dict.form.email.label, value: "nathanael.rayapin@gmail.com", href: "mailto:nathanael.rayapin@gmail.com" },
+    { icon: Phone, label: dict.phone.label, value: "+33 6 41 51 27 17", href: "tel:+33641512717" },
+    { icon: MapPin, label: dict.location.label, value: "Le Mans, France" },
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,13 +112,12 @@ export default function ContactSection() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
           )}
         >
-          <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-primary">Contact</span>
+          <span className="mb-4 block text-sm font-medium uppercase tracking-widest text-primary">{dict.section}</span>
           <h2 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            <span className="text-balance">Travaillons ensemble</span>
+            <span className="text-balance">{dict.title}</span>
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Une idée de projet ? Une question ? N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs
-            délais.
+            {dict.description}
           </p>
         </div>
 
@@ -99,11 +133,11 @@ export default function ContactSection() {
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Nom
+                    {dict.form.name.label}
                   </label>
                   <Input
                     id="name"
-                    placeholder="Votre nom"
+                    placeholder={dict.form.name.placeholder}
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     required
@@ -112,12 +146,12 @@ export default function ContactSection() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Email
+                    {dict.form.email.label}
                   </label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="votre@email.com"
+                    placeholder={dict.form.email.placeholder}
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     required
@@ -127,11 +161,11 @@ export default function ContactSection() {
               </div>
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium">
-                  Sujet
+                  {dict.form.subject.label}
                 </label>
                 <Input
                   id="subject"
-                  placeholder="Sujet de votre message"
+                  placeholder={dict.form.subject.placeholder}
                   value={formState.subject}
                   onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
                   required
@@ -140,11 +174,11 @@ export default function ContactSection() {
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium">
-                  Message
+                  {dict.form.message.label}
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Décrivez votre projet ou votre demande..."
+                  placeholder={dict.form.message.placeholder}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   required
@@ -161,11 +195,11 @@ export default function ContactSection() {
                 {isSubmitting ? (
                   <>
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                    Envoi en cours...
+                    {dict.form.cta.labelpending}
                   </>
                 ) : (
                   <>
-                    Envoyer le message
+                    {dict.form.cta.label}
                     <Send className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </>
                 )}
@@ -202,7 +236,7 @@ export default function ContactSection() {
 
             {/* Social links */}
             <div className="rounded-xl border border-border bg-card/50 p-6">
-              <h3 className="mb-4 font-semibold">Retrouvez-moi sur</h3>
+              <h3 className="mb-4 font-semibold">{dict.findme}</h3>
               <div className="flex gap-4">
                 {socials.map((social) => (
                   <a
@@ -228,8 +262,8 @@ export default function ContactSection() {
                   <div className="absolute inset-0 animate-ping rounded-full bg-green-500 opacity-50" />
                 </div>
                 <div>
-                  <p className="font-semibold text-primary">Ouvert aux opportunités</p>
-                  <p className="text-sm text-muted-foreground">Actuellement ouvert à de nouveaux projets</p>
+                  <p className="font-semibold text-primary">{dict.opentoopportunities.title}</p>
+                  <p className="text-sm text-muted-foreground">{dict.opentoopportunities.description}</p>
                 </div>
               </div>
             </div>

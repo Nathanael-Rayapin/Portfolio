@@ -3,19 +3,36 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Locale } from "@/app/[lang]/dictionaries"
+import { useRouter, usePathname } from 'next/navigation';
+import Select from "./ui/select"
 
-const navLinks = [
-  { href: "#accueil", label: "Accueil" },
-  { href: "#a-propos", label: "À propos" },
-  { href: "#competences", label: "Compétences" },
-  { href: "#projets", label: "Projets" },
-  { href: "#contact", label: "Contact" },
-]
+export interface INavigationProps {
+  lang: Locale;
+  dict: {
+    home: string;
+    about: string;
+    skills: string;
+    projects: string;
+    contact: string;
+  };
+}
 
-export default function Navigation() {
+export default function Navigation({ lang, dict }: INavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("accueil")
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const navLinks = [
+    { href: "#accueil", label: dict.home },
+    { href: "#a-propos", label: dict.about },
+    { href: "#competences", label: dict.skills },
+    { href: "#projets", label: dict.projects },
+    { href: "#contact", label: dict.contact },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,6 +63,12 @@ export default function Navigation() {
     }
     setIsMobileMenuOpen(false)
   }
+
+  const handleLanguageChange = (newLang: string) => {
+    if (newLang === lang) return;
+    const newPathname = pathname.replace(`/${lang}`, `/${newLang}`);
+    router.push(newPathname);
+  };
 
   return (
     <header
@@ -98,6 +121,8 @@ export default function Navigation() {
             </li>
           ))}
         </ul>
+
+        <Select currentLang={lang} handleLanguageChange={handleLanguageChange} />
 
         {/* Mobile Menu Button */}
         <button

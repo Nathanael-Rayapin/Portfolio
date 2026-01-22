@@ -6,7 +6,18 @@ import { siGithub } from 'simple-icons'
 import { Button } from "@/components/ui/button"
 import BrandIcon from "./brand-icon"
 
-export default function HeroSection() {
+interface IHeroProps {
+  dict: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    cta1: string;
+    cta2: string;
+  };
+}
+
+export default function HeroSection({ dict }: IHeroProps) {
   const [isVisible, setIsVisible] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -57,7 +68,7 @@ export default function HeroSection() {
             }`}
         >
           <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            👋 Bonjour, je suis
+            👋 {dict.badge}
           </span>
         </div>
 
@@ -75,9 +86,9 @@ export default function HeroSection() {
             }`}
         >
           <p className="text-xl font-medium text-muted-foreground sm:text-2xl lg:text-3xl">
-            <span className="text-primary">Développeur Fullstack</span>
+            <span className="text-primary">{dict.title}</span>
           </p>
-          <p className="mt-2 text-lg text-muted-foreground">Spécialisé en “pourquoi on fait ça comme ça ?”</p>
+          <p className="mt-2 text-lg text-muted-foreground">{dict.subtitle}</p>
         </div>
 
         {/* Description */}
@@ -85,7 +96,7 @@ export default function HeroSection() {
           className={`mx-auto mb-12 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg transition-all duration-700 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
         >
-          Je conçois et développe des applications web modernes, avec une attention particulière portée à la qualité du code, aux choix techniques et à l'architecture.
+          {dict.description}
         </p>
 
         {/* CTA Buttons */}
@@ -101,7 +112,7 @@ export default function HeroSection() {
               if (element) element.scrollIntoView({ behavior: "smooth" })
             }}
           >
-            <span className="relative z-10">Voir mes projets</span>
+            <span className="relative z-10">{dict.cta1}</span>
             <span className="absolute inset-0 -translate-x-full bg-foreground transition-transform duration-300 group-hover:translate-x-0" />
           </Button>
           <Button
@@ -113,7 +124,7 @@ export default function HeroSection() {
               if (element) element.scrollIntoView({ behavior: "smooth" })
             }}
           >
-            Me contacter
+            {dict.cta2}
           </Button>
         </div>
 
@@ -126,6 +137,7 @@ export default function HeroSection() {
             <a
               key={label}
               href={href}
+              target="_blank"
               aria-label={label}
               className="group relative p-3 text-muted-foreground transition-colors duration-300 hover:text-primary"
             >

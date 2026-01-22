@@ -1,0 +1,121 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About me",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "badge": "Hello, I am",
+        "title": "Full Stack Developer",
+        "subtitle": "Specialized in “why do we do it this way?”",
+        "description": "I design and develop modern web applications, with a particular focus on code quality, technical choices, and architecture (The portfolio does not count🤭)",
+        "cta1": "See my projects",
+        "cta2": "Contact me"
+    },
+    "about": {
+        "section": "About me",
+        "title": "Who am I ?",
+        "description1": "A passionate developer with four years of experience, I began my career at ESN, working on a wide variety of projects and in diverse contexts. This diversity has allowed me to gain experience in many areas: front-end, back-end, DevOps, web, mobile, as well as low-code and no-code solutions.",
+        "description2": "I approach each project with a pragmatic and curious mindset, seeking above all to understand the need and make coherent technical choices. I also use AI as a development aid tool when it makes sense, while ensuring that I remain fully involved in my projects rather than simply observing them.",
+        "description3": "Outside of development, I cultivate my other passions, ranging from digital culture to gastronomy.",
+        "localisation": {
+            "label": "Location",
+            "value": "Le Mans, France"
+        },
+        "availability": {
+            "label": "Availability",
+            "value": "Open to opportunities"
+        },
+        "experience": {
+            "label": "Experience",
+            "alternatelabel": "Years of experience",
+            "value": "4 years"
+        },
+        "completedprojects": "Completed projects",
+        "passion": "Passion",
+        "experiences": [
+            {
+                "role": "Full Stack Developer",
+                "description": "Integration of a white-label Keycloak authentication system: registration process, login and password management, with development of custom authenticators."
+            },
+            {
+                "role": "Full Stack Developer",
+                "description": "Development of a web interface integrated with cash registers allowing consultation and updating of customer information as well as the creation of loyalty cards, with rendering via WebView and addition of a virtual keyboard."
+            },
+            {
+                "role": "Full Stack Developer",
+                "description": "Implementation of a new subscription offer with role-based user access management via Keycloak, integrated with existing offers and delivered within a tight deadline."
+            },
+            {
+                "role": "Mobile Developer",
+                "description": "Development of a mobile application for journalists to upload videos, including compression and sending to external platforms."
+            },
+            {
+                "role": "Full Stack Developer",
+                "description": "Design of a tenant journey for submitting applications (account creation, completing the application) and back-office development with filters and processing of submitted data."
+            }
+        ]
+    },
+    "skills": {
+        "title": "Technical Stack"
+    },
+    "project": {
+        "section": "Projects",
+        "title": "Recent work",
+        "description": "A selection of my most recent projects, demonstrating my expertise in modern web development.",
+        "projects": [
+            {
+                "description": "Digital platform for discovering and booking activities, with secure payment and user management."
+            },
+            {
+                "description": "Instant alerts when external services (Stripe, AWS, Vercel, etc.) go down, your SSL certificate expires, or your API slows down."
+            },
+            {
+                "description": "Educational project aimed at testing and documenting each Vitest feature through simple, concrete use cases."
+            }
+        ]
+    },
+    "contact": {
+        "section": "Contact",
+        "title": "Let's work together",
+        "description": "Got a project idea? Have a question? Feel free to reach out to me. I'll get back to you as soon as possible.",
+        "form": {
+            "name": {
+                "label": "Name",
+                "placeholder": "Your name"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "your@email.com"
+            },
+            "subject": {
+                "label": "Subject",
+                "placeholder": "Subject of your message"
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": "Describe your project or request..."
+            },
+            "cta": {
+                "label": "Send message",
+                "labelpending": "Sending..."
+            }
+        },
+        "phone": {
+            "label": "Phone"
+        },
+        "location": {
+            "label": "Location"
+        },
+        "findme": "Find me on",
+        "opentoopportunities": {
+            "title": "Open to opportunities",
+            "description": "Currently open to new projects"
+        }
+    },
+    "footer": {
+        "madewith": "Made with"
+    }
+}

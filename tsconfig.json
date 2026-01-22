@@ -25,7 +25,10 @@
     "paths": {
       "@/*": [
         "./*"
-      ]
+      ],
+      "@dictionary": [
+        "./app/[lang]/dictionaries"
+      ],
     }
   },
   "include": [
