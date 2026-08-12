@@ -86,7 +86,7 @@ export default function AboutSection({ dict }: IAboutProps) {
   ]
 
   const stats = [
-    { value: 4, suffix: "", label: dict.experience.alternatelabel },
+    { value: 5, suffix: "", label: dict.experience.alternatelabel },
     { value: 10, suffix: "+", label: dict.completedprojects },
     { value: 100, suffix: "%", label: dict.passion },
   ]

@@ -17,7 +17,7 @@
     "about": {
         "section": "À propos",
         "title": "Qui suis-je ?",
-        "description1": "Développeur passionné avec 4 ans d'expérience, j'ai débuté mon parcours en ESN, au fil de missions et de contextes très variés. Cette diversité m'a permis de toucher à de nombreux domaines : front-end, back-end, DevOps, web, mobile, ainsi que des solutions low-code et no-code.",
+        "description1": "Développeur passionné avec 5 ans d'expérience, j'ai débuté mon parcours en ESN, au fil de missions et de contextes très variés. Cette diversité m'a permis de toucher à de nombreux domaines : front-end, back-end, DevOps, web, mobile, ainsi que des solutions low-code et no-code.",
         "description2": "J'aborde chaque projet avec une approche pragmatique et curieuse, en cherchant avant tout à comprendre le besoin et à faire des choix techniques cohérents. J'utilise également l'IA comme outil d'aide au développement lorsque cela a du sens, tout en veillant à rester pleinement acteur de mes réalisations plutôt que simple spectateur.",
         "description3": "En dehors du développement, je cultive mes autres passions, entre culture numérique et gastronomie.",
         "localisation": {
@@ -31,7 +31,7 @@
         "experience": {
             "label": "Expérience",
             "alternatelabel": "Années d'expérience",
-            "value": "4 ans"
+            "value": "5 ans"
         },
         "completedprojects": "Projets réalisés",
         "passion": "Passion",

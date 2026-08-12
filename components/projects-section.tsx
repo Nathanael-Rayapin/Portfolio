@@ -129,8 +129,10 @@ export default function ProjectsSection({ dict }: IProjectProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
 
+                
                   {/* Hover overlay */}
-                  <div
+                  {( project.title !== "Wewiins" &&
+                    <div
                     className={cn(
                       "absolute inset-0 flex items-center justify-center gap-4 bg-background/80 backdrop-blur-sm transition-opacity duration-300",
                       hoveredProject === project.id ? "opacity-100" : "opacity-0",
@@ -146,6 +148,7 @@ export default function ProjectsSection({ dict }: IProjectProps) {
                       </a>
                     </Button>
                   </div>
+                  )}
                 </div>
 
                 {/* Content */}
